@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <span class="logo-text">10</span>
+                <span class="logo-subtext">РНФ<br>Российский научный фонд</span>
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="{{url_for('landing')}}">Главная</a></li>
+                    <li class="nav-item"><a href="#">Новости</a></li>
+                    <li class="nav-item"><a href="#">Статьи</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="lang-switch">ENG</a>
+                <a href="{{url_for('login')}}" class="signin">Вход</a>
+                <div class="menu-icon">&#9776</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="lgn">
+        <h2>Регистрация</h2>
+        <div>
+            {% for cat, msg in get_flashed_messages(True) %}
+            <div class="flash {{cat}}">{{msg}}</div>
+            {% endfor %}
+            <form id="registerForm" method="post">
+                <p><label for="username">Имя пользователя:</label>
+                    <input type="text" id="username" name="username" required>
+                <p><label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="" required>
+                <p><label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" value="" required>
+                <p><label for="password2">Повтор пароля:</label>
+                <input type="password" id="password2" name="password2" value="" required>
+                <p><input type="checkbox" name="remme">Запомнить меня
+                <p><button type="submit" class="btn">Зарегистрироваться</button>
+            </form>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            <a href="https://rscf.ru/project/24-41-02031/">Ссылка на карточку проекта на сайте
+                РНФ</a>
+        </p>
+    </footer>
+</body>
+
+</html>
