@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>rsf-dst-24-41-02031</title>
+    {% endif %}
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <span class="logo-text">10</span>
+                <span class="logo-subtext">РНФ<br>Российский научный фонд</span>
+            </div>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    {% block header_list %}
+                    <li class="nav-item"><a href="#main">Главная</a></li>
+                    <li class="nav-item"><a href="#">Новости</a></li>
+                    <li class="nav-item"><a href="#">Статьи</a></li>
+                    {% endblock %}
+                </ul>
+            </nav>
+            <div class="header-actions">
+                {% block header_actions %}
+                <a href="#" class="lang-switch">ENG</a>
+                <div class="menu-icon">&#9776</div>
+                {% endblock %}
+            </div>
+        </div>
+    </header>
+
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>
+            <a href="https://rscf.ru/project/24-41-02031/">Ссылка на карточку проекта на сайте
+                РНФ</a>
+        </p>
+    </footer>
+</body>
+
+</html>
