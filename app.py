@@ -2,7 +2,8 @@ from flask import Flask, g, url_for, render_template, flash, request, redirect
 import sqlite3
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
-from FDataBase import FDataBase
+from FDataBase import FDataBase 
+from forms import LoginForm
 
 
 # Конфигурация
@@ -61,9 +62,13 @@ def landing():
     return render_template('index.html')
 
 
-@app.route("/login")
+@app.route("/login", methods=['GET', 'POST'])
 def login():
-    return render_template('login.html')
+    form = LoginForm()
+    if form.validate_on_submit():
+        flash('Login requested for user')
+        return redirect(url_for('landing'))
+    return render_template('login.html', title='Вход', form=form)
 
 
 @app.route("/register", methods=["POST", "GET"])

@@ -25,7 +25,7 @@
             <nav class="header-nav">
                 <ul class="nav-list">
                     {% block header_list %}
-                    <li class="nav-item"><a href="#main">Главная</a></li>
+                    <li class="nav-item"><a href="{{url_for('landing')}}">Главная</a></li>
                     <li class="nav-item"><a href="#">Новости</a></li>
                     <li class="nav-item"><a href="#">Статьи</a></li>
                     {% endblock %}
