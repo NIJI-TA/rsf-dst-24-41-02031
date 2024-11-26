@@ -20,6 +20,6 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # user — это имя таблицы базы данных, которую Flask-SQLAlchemy автоматически устанавливает как имя класса модели, преобразованного в нижний регистр
     
     def __repr__(self):
-        return '<User {}>'.format(self.title)
+        return '<Post {}>'.format(self.title)
     
     

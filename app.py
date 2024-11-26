@@ -21,6 +21,15 @@ migrate = Migrate(app, db)
 
 import models # Импортируем модели для наших БД
 
+# Настройка Flask Shell
+from app import app, db
+from models import User, Post
+
+@app.shell_context_processor
+def make_shell_context():
+    return {'db': db, 'User': User, 'Post': Post}
+
+
 # def connect_db():
 #     conn = sqlite3.connect(app.config['DATABASE'])
 #     conn.row_factory = sqlite3.Row
