@@ -23,7 +23,7 @@ def login():
     if form.validate_on_submit(): # Если все верно
         # Пытаемся найти пользователя (при таком запросе получим либо пользователя из БД, либо None)
         user = User.query.filter_by(username=form.username.data).first()
-        if user is None or user.check_password(form.password.data):
+        if user is None or not user.check_password(form.password.data):
             flash('Неправильное имя пользователя или пароль')
             return redirect(url_for('login')) # Повторно загружаем страницу авторизации
         login_user(user, form.remember_me.data) # Регистрируем пользователя с помощью функции из flask-login
