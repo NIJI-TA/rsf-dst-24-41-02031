@@ -6,7 +6,6 @@ from datetime import datetime, timezone
 from werkzeug.security import generate_password_hash, check_password_hash # Пока используем библиотеку для хэширования, позже, позможно, напишем свой модуль для хэширования паролей и других данных, если потребуется
 
 
-
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
@@ -26,8 +25,7 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
  
- 
-    
+
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150), nullable=False, index=True)
@@ -35,13 +33,12 @@ class Post(db.Model):
     file_body = db.Column(db.String(140)) # Потом заменим на file_path = db.Column(db.String(255), nullable=False, unique=True)
     timestamp = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc), index=True) 
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # user — это имя таблицы базы данных, которую Flask-SQLAlchemy автоматически устанавливает как имя класса модели, преобразованного в нижний регистр
-    
-    
+
     def __repr__(self):
         return '<Post {}>'.format(self.title)
     
 
-# Регистрируем пользовательский загрузчик с посощью декоратора:
+# Регистрируем пользовательский загрузчик с помощью декоратора:
 @login.user_loader
 def load_user(id):
     return User.query.get(int(id)) # Идентификатор, который от flask-login передается в функцию является строкой, поэтому для нашей БД эту строку нужно перевести в целое число
