@@ -1,8 +1,10 @@
-from datetime import datetime, timezone
 from app import db
-from werkzeug.security import generate_password_hash, check_password_hash # Пока используем библиотеку для хэширования, позже, позможно, напишем свой модуль для хэширования паролей и других данных, если потребуется
-from flask_login import UserMixin # mixin класс который реализует некоторые необходимые элементы для нашего класса User
 from app import login # Необходимо для пользовательского загрузчика
+
+from flask_login import UserMixin # mixin класс который реализует некоторые необходимые элементы для нашего класса User
+from datetime import datetime, timezone
+from werkzeug.security import generate_password_hash, check_password_hash # Пока используем библиотеку для хэширования, позже, позможно, напишем свой модуль для хэширования паролей и других данных, если потребуется
+
 
 
 class User(UserMixin, db.Model):
