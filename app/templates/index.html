@@ -11,7 +11,7 @@
 {% block header_actions %}
 {% if current_user.is_anonymous %}
 <a href="{{url_for('login')}}" class="signin">Вход</a>
-{%_else %}
+{% else %}
 <a href="{{url_for('logout')}}" class="signin">Выйти</a>
 {% endif %}
 {{ super() }}
