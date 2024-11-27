@@ -10,14 +10,14 @@ from flask_login import current_user, login_user, logout_user
 
 # Routes
 @app.route("/")
-def landing():
+def index():
     return render_template('index.html')
 
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('landing'))
+        return redirect(url_for('index'))
     
     form = LoginForm() # Берем данные полученные из формы
     if form.validate_on_submit(): # Если все верно
@@ -27,7 +27,7 @@ def login():
             flash('Неправильное имя пользователя или пароль')
             return redirect(url_for('login')) # Повторно загружаем страницу авторизации
         login_user(user, form.remember_me.data) # Регистрируем пользователя с помощью функции из flask-login
-        return redirect(url_for('landing')) # Переходим на главную страницу
+        return redirect(url_for('index')) # Переходим на главную страницу
     
     return render_template('login.html', title='Вход', form=form)
 
@@ -35,14 +35,14 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('landing'))
+    return redirect(url_for('index'))
 
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for('landing'))
+        return redirect(url_for('index'))
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)
