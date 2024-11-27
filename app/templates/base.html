@@ -5,10 +5,13 @@
     <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>rsf-dst-24-41-02031</title>
+    {% endif %}
+
 </head>
 
 <body>
@@ -21,37 +24,26 @@
             </div>
             <nav class="header-nav">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="{{url_for('landing')}}">Главная</a></li>
+                    {% block header_list %}
+                    <li class="nav-item"><a href="{{url_for('index')}}">Главная</a></li>
                     <li class="nav-item"><a href="#">Новости</a></li>
                     <li class="nav-item"><a href="#">Статьи</a></li>
+                    {% endblock %}
                 </ul>
             </nav>
             <div class="header-actions">
+                {% block header_actions %}
                 <a href="#" class="lang-switch">ENG</a>
                 <div class="menu-icon">&#9776</div>
+                {% endblock %}
             </div>
         </div>
     </header>
 
-    <main class="lgn">
-        <h2>Вход</h2>
-        <div>
-            {% for cat, msg in get_flashed_messages(True) %}
-            <div class="flash {{cat}}">{{msg}}</div>
-            {% endfor %}
-            <form id="registerForm" method="post">
-                <p><label for="email">Email:</label>
-                    <input type="email" id="email" name="email" value="" required>
-                <p><label for="password">Пароль:</label>
-                    <input type="password" id="password" name="password" value="" required>
-                <p><input type="checkbox" name="remme">Запомнить меня
-                <p><button type="submit" class="btn">Войти</button>
-                    <br>
-                    <hr>
-                <p><a href="{{url_for('register')}}">Регистрация</a>
-            </form>
-        </div>
-    </main>
+
+    {% block content %}
+    {% endblock %}
+
     <!-- Footer -->
     <footer class="footer">
         <p>
