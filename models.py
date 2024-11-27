@@ -1,10 +1,11 @@
 from datetime import datetime, timezone
 from app import db
 from werkzeug.security import generate_password_hash, check_password_hash # Пока используем библиотеку для хэширования, позже, позможно, напишем свой модуль для хэширования паролей и других данных, если потребуется
+from flask_login import UserMixin # mixin класс который реализует некоторые необходимые элементы для нашего класса User
+from app import login # Необходимо для пользовательского загрузчика
 
 
-
-class User(db.Model):
+class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
     email = db.Column(db.String(120), index=True, unique=True)
@@ -36,5 +37,11 @@ class Post(db.Model):
     
     def __repr__(self):
         return '<Post {}>'.format(self.title)
+    
+
+# Регистрируем пользовательский загрузчик с посощью декоратора:
+@login.user_loader
+def load_user(id):
+    return User.query.get(int(id)) # Идентификатор, который от flask-login передается в функцию является строкой, поэтому для нашей БД эту строку нужно перевести в целое число
     
     
