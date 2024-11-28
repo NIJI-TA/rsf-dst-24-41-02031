@@ -3,6 +3,9 @@ from app import app
 from app import db
 from app.forms import LoginForm, RegistrationForm # Берем наши формы как поля классов в файле forms
 from app.models import User, Post
+from app.forms import ResetPasswordRequestForm
+from app.email import send_password_reset_email
+from app.forms import ResetPasswordForm
 
 from flask import url_for, render_template, flash, request, redirect
 from flask_login import current_user, login_user, logout_user
@@ -52,3 +55,33 @@ def register():
         flash('Вы успешно зарегистрированы!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Регистрация', form=form)
+
+
+@app.route('/reset_password_request', methods=['GET', 'POST'])
+def reset_password_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user:
+            send_password_reset_email(user)
+        flash('Инструкция по сбросу пароля была отправлена на указанную почту')
+        return redirect(url_for('login'))
+    return render_template('reset_password_request.html', title='Сброс пароля', form=form)
+
+
+@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+def reset_password(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    user = User.verify_reset_password_token(token)
+    if not user:
+        return redirect(url_for('index'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        user.set_password(form.password.data)
+        db.session.commit()
+        flash('Ваш паспорт был успешно сброшен.')
+        return redirect(url_for('login'))
+    return render_template('reset_password.html', form=form)
