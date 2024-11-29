@@ -13,4 +13,4 @@ def make_shell_context():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)  # Включаем отладку вручную
+    app.run(debug=True)  # Включаем отладку вручную
