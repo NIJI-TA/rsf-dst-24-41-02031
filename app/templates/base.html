@@ -5,6 +5,16 @@
     <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMA3e7D/70Ly4#important" crossorigin="anonymous">
 
     {% if title %}
     <title>{{ title }}</title>
@@ -18,23 +28,21 @@
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <div class="header-logo">
-                <span class="logo-text">10</span>
-                <span class="logo-subtext">РНФ<br>Российский научный фонд</span>
-            </div>
-            <nav class="header-nav">
+            <!--div class="header-logo">
+                <img class="logo-image" src="{{ url_for('static', filename='images/logo_1.png') }}" alt="Логотип">
+            </div-->
+            <nav class="header-nav" aria-label="Главное меню">
                 <ul class="nav-list">
                     {% block header_list %}
                     <li class="nav-item"><a href="{{url_for('index')}}">Главная</a></li>
-                    <li class="nav-item"><a href="#">Новости</a></li>
-                    <li class="nav-item"><a href="#">Статьи</a></li>
+                    <li class="nav-item"><a href="">Новости</a></li>
+                    <li class="nav-item"><a href="">Статьи</a></li>
                     {% endblock %}
                 </ul>
             </nav>
             <div class="header-actions">
                 {% block header_actions %}
-                <a href="#" class="lang-switch">ENG</a>
-                <div class="menu-icon">&#9776</div>
+                <li><a href="" class="lang-switch" aria-label="Сменить язык">ENG</a></li>
                 {% endblock %}
             </div>
         </div>
@@ -44,13 +52,85 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Footer -->
+    <!-- Footer >
     <footer class="footer">
-        <p>
-            <a href="https://rscf.ru/project/24-41-02031/">Ссылка на карточку проекта на сайте
-                РНФ</a>
-        </p>
+        <a href="https://rscf.ru/project/24-41-02031/">Ссылка на карточку проекта на сайте
+            РНФ</a>
+    </footer-->
+
+    <footer class="footer">
+        <div class="footer-row">
+            <div class="footer-col-1">
+                <h4>О нас</h4>
+                <ul>
+                    <li>
+                        <p>Проект посвящён исследованиям магнитоэлектрических эффектов и применению ИИ для управления
+                            движением и защиты космических аппаратов. Выполняется при поддержке РНФ в сотрудничестве с
+                            СПбГУ.</p>
+                    </li>
+                    <li><a href="https://rscf.ru/project/24-41-02031/"> &#10097 Ссылка на карточку проекта на сайте
+                            РНФ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-2">
+                <h4>Материалы</h4>
+                <ul>
+                    <li><a>Новости</a></li>
+                    <li><a>Статьи</a></li>
+                </ul>
+                <br>
+                <br>
+            </div>
+            <div class="footer-col-4">
+                <h4>Сервисы</h4>
+                <ul>
+                    <li><a>Вход</a></li>
+                    <li><a>Регистрация</a></li>
+                    <li><a>Подписка</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-3">
+                <h4>Контакты</h4>
+                <a class="mail">&#9993 a.tikhonov@spbu.ru</a>
+                <a class="mail">&#9993 dkgiri@iitk.ac.in</a>
+                <div class="social-links">
+                    <a href="https://www.mathnet.ru/rus/person59611"><i class="fa fa-window-restore"></i></a>
+                    <a href="https://www.researchgate.net/profile/Dipak-Giri-2"><i class="fa fa-address-book"></i></a>
+                    <a href="https://tm.spbu.ru/2-uncategorised/20-tikhonov-a-a.html"><i class="fa fa-university"></i></a>
+                    <a><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
+
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000, /* Длительность анимации */
+            easing: 'ease', /* Плавность */
+            once: false,
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const header = document.querySelector(".header");
+            const heroSection = document.querySelector(".hero");
+
+            // Обработчик прокрутки
+            const handleScroll = () => {
+                const heroHeight = heroSection.offsetHeight; // Высота секции hero
+                if (window.scrollY > heroHeight - 50) {
+                    header.classList.add("scroll-active");
+                } else {
+                    header.classList.remove("scroll-active");
+                }
+            };
+
+            // Слушатель события прокрутки
+            window.addEventListener("scroll", handleScroll);
+        });
+    </script>
 </body>
 
 </html>
