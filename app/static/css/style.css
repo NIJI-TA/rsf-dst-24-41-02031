@@ -50,6 +50,12 @@ strong {
 
 /* Главная секция */
 /* Изначально прозрачный header */
+
+#name a {
+  font-weight: 350;
+  color: #97b8ff;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -623,6 +629,7 @@ strong {
 
 .login {
   display: flex;
+  width: 70%;
   justify-content: space-between;
   padding-top: 20px;
 }
@@ -669,6 +676,7 @@ strong {
 
 .reg-pass {
   display: flex;
+  width: 70%;
   justify-content: space-between;
 }
 
@@ -687,7 +695,8 @@ strong {
 }
 
 .card-container-reg .custom-input {
-  /* Растянуть на всю ширину контейнера */
+  /* Растянуть почти на всю ширину контейнера */
+  width: 70%;
   padding: 8px; /* Внутренние отступы */
   margin: 10px 0; /* Отступы сверху и снизу */
   border: 2px solid #ffffff; /* Цвет границы */
@@ -1012,6 +1021,9 @@ strong {
 
 /* Адаптация для смартфонов (ширина 480px и меньше) */
 @media screen and (max-width: 480px) {
+  * {
+    box-sizing: border-box;
+  }
   body {
     font-size: 14px; /* Уменьшить общий размер текста */
   }
