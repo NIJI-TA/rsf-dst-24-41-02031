@@ -9,10 +9,11 @@
 {% endblock %}
 
 {% block header_actions %}
-{% if current_user.is_anonymous %}
 {{ super() }}
+{% if current_user.is_anonymous %}
 <li class="nav-item"><a href="{{url_for('login')}}">Вход</a></li>
 {% else %}
+<li class="nav-item"><a>{{ current_user.username }}</a>
 <li class="nav-item"><a href="{{url_for('logout')}}">Выйти</a></li>
 {% endif %}
 {% endblock %}
