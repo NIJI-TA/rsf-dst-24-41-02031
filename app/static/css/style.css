@@ -629,7 +629,6 @@ strong {
 
 .login {
   display: flex;
-  width: 70%;
   justify-content: space-between;
   padding-top: 20px;
 }
