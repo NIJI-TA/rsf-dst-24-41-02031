@@ -13,46 +13,54 @@
 
 
 {% block content %}
+
+
 <!-- Sign in -->
-<main class="lgn">
-    <h1>Вход</h1>
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-        <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-    {% endwith %}
-    <div>
-        <form action="" method="post" novalidate>
-            {{ form.hidden_tag() }}
-            <p>
-                {{ form.username.label }}<br>
-                {{ form.username(size=32) }}<br>
-                {% for error in form.username.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>
-                {{ form.password.label }}<br>
-                {{ form.password(size=32) }}<br>
-                {% for error in form.password.errors %}
-                <span style="color: red;">[{{ error }}]</span>
-                {% endfor %}
-            </p>
-            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-            <p>{{ form.submit() }}</p>
-        </form>
-        <p>
-                Забыли пароль?
-            <a href="{{ url_for('reset_password_request') }}">Нажмите, чтобы сбросить пароль</a>
-        </p>
-        <br>
-        <hr>
-        <p><a href="{{url_for('register')}}">Регистрация</a>
-        </p>
+<div class="fullscreen-container-login">
+    <div class="box-login">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        <div class="card-container-login">
+            <div>
+                <h2 data-aos="fade-right" data-aos-duration="1000">Авторизация</h2>
+                <div class="card-login" data-aos="fade-out" data-aos-duration="2000">
+                    <form action="" method="post" novalidate>
+                        {{ form.hidden_tag() }}
+                        <div>
+                            {{ form.username.label }}<br>
+                            {{ form.username(size=32) }}
+                            {% for error in form.username.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </div>
+                        <div>
+                            {{ form.password.label }}<br>
+                            {{ form.password(size=32) }}<br>
+                            {% for error in form.password.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </div>
+                        <div class="login">
+                            <div>{{ form.remember_me() }} {{ form.remember_me.label }}</div>
+                            <div>{{ form.submit() }}</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card-login" data-aos="fade-up" data-aos-duration="1000">
+                <a href="{{ url_for('reset_password_request') }}">Забыли пароль?</a>
+                <a href="{{url_for('register')}}">Регистрация</a>
+                </p>
+            </div>
+        </div>
     </div>
-</main>
+</div>
+
 {% endblock %}

@@ -40,11 +40,13 @@
                     {% endblock %}
                 </ul>
             </nav>
-            <div class="header-actions">
-                {% block header_actions %}
-                <li><a href="" class="lang-switch" aria-label="Сменить язык">ENG</a></li>
-                {% endblock %}
-            </div>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    {% block header_actions %}
+                    <li class="nav-item"><a href="">ENG</a></li>
+                    {% endblock %}
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -96,7 +98,8 @@
                 <div class="social-links">
                     <a href="https://www.mathnet.ru/rus/person59611"><i class="fa fa-window-restore"></i></a>
                     <a href="https://www.researchgate.net/profile/Dipak-Giri-2"><i class="fa fa-address-book"></i></a>
-                    <a href="https://tm.spbu.ru/2-uncategorised/20-tikhonov-a-a.html"><i class="fa fa-university"></i></a>
+                    <a href="https://tm.spbu.ru/2-uncategorised/20-tikhonov-a-a.html"><i
+                            class="fa fa-university"></i></a>
                     <a><i class="fab fa-telegram"></i></a>
                 </div>
             </div>
@@ -119,11 +122,15 @@
 
             // Обработчик прокрутки
             const handleScroll = () => {
-                const heroHeight = heroSection.offsetHeight; // Высота секции hero
-                if (window.scrollY > heroHeight - 50) {
-                    header.classList.add("scroll-active");
+                if (heroSection != null) {
+                    const heroHeight = heroSection.offsetHeight; // Высота секции hero
+                    if (window.scrollY > heroHeight - 50) {
+                        header.classList.add("scroll-active");
+                    } else {
+                        header.classList.remove("scroll-active");
+                    }
                 } else {
-                    header.classList.remove("scroll-active");
+                    header.classList.add("scroll-active");
                 }
             };
 

@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   height: 100%;
@@ -21,7 +25,6 @@ html {
 
 /* Основные настройки сайта */
 body {
-  font-family: "Source Sans 3", sans-serif;
   color: #e2e6e9;
   background-color: #111213;
 }
@@ -48,11 +51,13 @@ strong {
 /* Главная секция */
 /* Изначально прозрачный header */
 .header {
+  display: flex;
+  justify-content: center;
   position: fixed;
   font-weight: 200;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   z-index: 1000;
   padding: 20px;
   max-height: 10vh;
@@ -64,7 +69,7 @@ strong {
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .nav-list {
@@ -77,9 +82,8 @@ strong {
 
 .header-actions {
   display: flex;
-  gap: 40px;
+  justify-content: space-between;
   list-style: none;
-  margin: 0;
 }
 .header-actions a {
   text-decoration: none;
@@ -167,7 +171,7 @@ strong {
   text-transform: uppercase;
   margin: 0 0 20px;
   font-size: clamp(1rem, 2vw, 2rem);
-  color: rgba(151, 184, 255, 0.7); /* Белый с 50% прозрачности */
+  color: #979797; /* Белый с 50% прозрачности */
 }
 
 /* Анимация текста с помощью AOS */
@@ -501,35 +505,224 @@ strong {
   margin-bottom: 0; /* Убираем отступ снизу */
 }
 
-.main {
-  padding: 0px 0px;
-  background-color: #fff;
-}
-
-.lgn {
+.fullscreen-container-login {
+  width: cover;
+  padding-top: 30px;
+  margin: 0 auto;
   display: flex;
-  background-color: #fff;
-  text-align: center;
-  margin-bottom: 0px;
-  background-size: cover;
-  background-position: center;
-  min-height: 85vh;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(
+      to top,
+      rgb(17, 18, 19),
+      rgba(13, 3, 38, 0.5),
+      rgba(13, 3, 38, 1)
+    ),
+    url("../images/space-galaxy-background.jpg") center/cover no-repeat;
+}
+
+.box-login {
+  margin: 5vh 5vw 5vh 5vw;
+  background-color: rgb(17, 18, 19, 0);
+  border-radius: 2px;
+  max-width: 800px;
+  min-height: 400px;
+  max-height: 70vh;
   text-align: center;
-  padding: 0px;
+}
+
+.box-login h2 {
+  margin-bottom: 5%;
+  font-size: 2.5rem;
+}
+
+.card-container-login {
+  display: flex;
+  margin: 0;
   flex-direction: column;
 }
 
-.lgn div {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: calc(60% - 20px);
+/* Карточки */
+.card-login {
+  background-color: rgba(13, 3, 38, 0);
+  border-radius: 2px;
+  font-size: 1.2rem;
   padding: 20px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 15px;
+  margin: 0;
+}
+
+.card-login h4 {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.card-login p {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.card-login a {
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 200;
+  padding: 10px;
+  transition: all 0.2s ease;
+}
+.card-login a:hover {
+  color: rgb(151, 184, 255);
+  font-size: 1.01rem;
+}
+
+.login-btn {
+  background-color: rgb(151, 184, 255); /* Зелёный фон */
+  color: white; /* Белый текст */
+  border: none; /* Без границы */
+  padding: 8px 20px; /* Внутренние отступы */
+  text-align: center; /* Центрирование текста */
+  font-size: 1rem; /* Размер шрифта */
+  cursor: pointer; /* Курсор указывает на кликабельность */
+  border-radius: 2px; /* Скругленные углы */
+  transform: translateY(+3px);
+}
+
+.login-btn:hover {
+  background-color: rgb(190, 210, 255); /* Темнее при наведении */
+}
+
+.custom-input {
+  /* Растянуть на всю ширину контейнера */
+  padding: 10px; /* Внутренние отступы */
+  margin: 15px 0; /* Отступы сверху и снизу */
+  border: 2px solid #fff; /* Цвет границы */
+  border-radius: 2px; /* Скругленные углы */
+  font-size: 16px; /* Размер текста */
+  background: rgba(255, 255, 255, 0.95); /* Белый фон */
+  color: rgba(51, 51, 51); /* Цвет текста */
+  transition: all 0.2s ease;
+}
+
+.custom-input:hover {
+  border-color: rgb(150, 182, 255); /* Изменение цвета границы при фокусе */
+  outline: none; /* Убрать стандартный обвод */
+  /* Лёгкая подсветка */
+}
+
+.custom-input:focus {
+  border-color: rgb(150, 182, 255); /* Изменение цвета границы при фокусе */
+  outline: none; /* Убрать стандартный обвод */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Лёгкая подсветка */
+  background: #ffffff;
+}
+
+.login {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.login div {
+  font-weight: 300;
+  font-size: 1rem;
+  color: rgb(150, 182, 255);
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Расстояние между чекбоксом и текстом */
+}
+
+.custom-checkbox {
+  appearance: none; /* Скрыть стандартный чекбокс */
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgb(150, 182, 255);
+  border-radius: 1px;
+  background-color: #fff;
+  cursor: pointer;
+  transform: translateY(+7px);
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox:checked {
+  background-color: #ffffff;
+  border-color: rgb(150, 182, 255);
+}
+
+.custom-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: rgb(150, 182, 255);
+  border-radius: 1px;
+}
+
+.reg-pass {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reg-pass {
+  display: flex;
+  flex-direction: row;
+  grid-gap: 15px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.card-container-reg {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+}
+
+.card-container-reg .custom-input {
+  /* Растянуть на всю ширину контейнера */
+  padding: 8px; /* Внутренние отступы */
+  margin: 10px 0; /* Отступы сверху и снизу */
+  border: 2px solid #ffffff; /* Цвет границы */
+  border-radius: 2px; /* Скругленные углы */
+  font-size: 14px; /* Размер текста */
+  background: rgba(255, 255, 255, 0.95); /* Белый фон */
+  color: #333; /* Цвет текста */
+  transition: all 0.2s ease;
+}
+
+.card-container-reg .custom-input:hover {
+  border-color: rgb(150, 182, 255); /* Изменение цвета границы при фокусе */
+  outline: none; /* Убрать стандартный обвод */
+  /* Лёгкая подсветка */
+}
+
+.card-container-reg .custom-input:focus {
+  border-color: rgb(150, 182, 255); /* Изменение цвета границы при фокусе */
+  outline: none; /* Убрать стандартный обвод */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Лёгкая подсветка */
+  background: #ffffff;
+}
+
+.card-container-reg .card-login a {
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 200;
+  padding: 5px;
+  transition: all 0.2s ease;
+}
+
+.card-container-reg .card-login a:hover {
+  color: rgb(151, 184, 255);
+  font-size: 1.01rem;
 }
 
 /* Футер 
@@ -554,12 +747,12 @@ strong {
 /* Адаптивность */
 
 .footer {
-  padding-top: 0px;
+  padding-top: 10vh;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50vh;
+  min-height: 60vh;
   background-color: #111213;
 }
 
@@ -645,9 +838,15 @@ strong {
 }
 
 /* Адаптивность */
+@media (max-width: 1700px) {
+  .card-container-2 {
+    grid-template-columns: 1fr; /* Одна колонка карточек */
+  }
+}
+
 @media (max-width: 1200px) {
   .header-container {
-    gap: 10px;
+    gap: 20px;
   }
   .hero h1 {
     font-size: clamp(1.8rem, 3.5vw, 3.5rem);
@@ -666,7 +865,7 @@ strong {
   }
 
   .nav-list {
-    gap: 10px;
+    gap: 20px;
   }
   .hero {
     padding: 15px;
@@ -675,20 +874,29 @@ strong {
   .hero-content {
     padding: 10px;
   }
+
+  .team-photo {
+    margin: 0 auto 15px; /* Центровка фото */
+  }
+
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+  }
+  .team-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+  }
 }
 
 @media (max-width: 768px) {
-  /* Скрываем дополнительные элементы */
-  .nav-item:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
-    display: none;
-  }
-
-  .header-actions:not(:nth-child(1):nth-child(2))
-
   /* Перенос меню в одну строку */
   .nav-list {
     justify-content: space-between;
-    gap: 10px;
+    gap: 15px;
     width: 100%;
     padding: 0 10px; /* Отступы слева и справа */
   }
@@ -711,14 +919,14 @@ strong {
   .card-container-2 {
     grid-template-columns: 1fr; /* Одна колонка карточек */
   }
+
+  .card-container-4 {
+    grid-template-columns: 1fr; /* Одна колонка */
+  }
+
   .box {
     min-width: 90%;
     padding: 5vh 5vw;
-  }
-  .team-member {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 
   .hero-content {
@@ -743,16 +951,13 @@ strong {
     align-items: center;
   }
 
-  .team-photo {
-    margin: 0 auto 15px; /* Центровка фото */
-  }
-
   .footer-row {
     grid-template-columns: 1fr; /* Одна колонка */
     text-align: center;
   }
 
-  .footer a, .footer p {
+  .footer a,
+  .footer p {
     transform: translateX(-20px);
   }
 
@@ -770,6 +975,9 @@ strong {
 }
 
 @media (max-width: 576px) {
+  .nav-item:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+    display: none;
+  }
   .header {
     padding: 10px;
   }
@@ -796,6 +1004,12 @@ strong {
   }
 }
 
+@media (max-height: 700px) {
+  .fullscreen-container-login {
+    min-height: 700px;
+  }
+}
+
 /* Адаптация для смартфонов (ширина 480px и меньше) */
 @media screen and (max-width: 480px) {
   body {
@@ -808,7 +1022,7 @@ strong {
 
   .nav-list,
   .header-actions {
-    gap: 10px;
+    gap: 15px;
   }
 
   .hero-content {
