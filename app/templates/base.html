@@ -37,6 +37,7 @@
                     <li class="nav-item"><a href="{{url_for('index')}}">Главная</a></li>
                     <li class="nav-item"><a href="">Новости</a></li>
                     <li class="nav-item"><a href="">Статьи</a></li>
+                    <li class="nav-item"><a href="">Конфереции</a></li>
                     {% endblock %}
                 </ul>
             </nav>
@@ -86,8 +87,8 @@
             <div class="footer-col-4">
                 <h4>Сервисы</h4>
                 <ul>
-                    <li><a>Вход</a></li>
-                    <li><a>Регистрация</a></li>
+                    <li><a href="{{url_for('login')}}">Вход</a></li>
+                    <li><a href="{{url_for('register')}}">Регистрация</a></li>
                     <li><a>Подписка</a></li>
                 </ul>
             </div>

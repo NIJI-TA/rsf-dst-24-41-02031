@@ -29,8 +29,8 @@
         {% endwith %}
         <div class="card-container-login">
             <div>
-                <h2 data-aos="fade-right" data-aos-duration="1000">Авторизация</h2>
-                <div class="card-login" data-aos="fade-out" data-aos-duration="2000">
+                <h2 data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">Авторизация</h2>
+                <div class="card-login" data-aos="fade-out" data-aos-duration="2000" v>
                     <form action="" method="post" novalidate>
                         {{ form.hidden_tag() }}
                         <div>
@@ -54,7 +54,7 @@
                     </form>
                 </div>
             </div>
-            <div class="card-login" data-aos="fade-up" data-aos-duration="1000">
+            <div class="card-login" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                 <a href="{{ url_for('reset_password_request') }}">Забыли пароль?</a>
                 <a href="{{url_for('register')}}">Регистрация</a>
                 </p>

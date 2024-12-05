@@ -147,16 +147,6 @@ strong {
   overflow: hidden;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /*background: rgba(0, 0, 0, 0.7); */
-  z-index: 1;
-}
 
 .hero-content {
   position: relative;
@@ -486,6 +476,7 @@ strong {
 }
 
 .team-container {
+  padding-top: 10px;
   display: flex;
   justify-content: space-around;
   gap: 50px;
@@ -512,7 +503,7 @@ strong {
 }
 
 .fullscreen-container-login {
-  width: cover;
+  width: 100%;
   padding-top: 30px;
   margin: 0 auto;
   display: flex;
@@ -604,6 +595,7 @@ strong {
 
 .custom-input {
   /* Растянуть на всю ширину контейнера */
+  width: 100%;
   padding: 10px; /* Внутренние отступы */
   margin: 15px 0; /* Отступы сверху и снизу */
   border: 2px solid #fff; /* Цвет границы */
@@ -686,6 +678,12 @@ strong {
   padding-bottom: 20px;
 }
 
+.reg-pass div {
+  flex: 1;
+}
+
+
+
 .card-container-reg {
   display: flex;
   margin: 0;
@@ -694,7 +692,7 @@ strong {
 
 .card-container-reg .custom-input {
   /* Растянуть почти на всю ширину контейнера */
-  width: 70%;
+  width: 100%;
   padding: 8px; /* Внутренние отступы */
   margin: 10px 0; /* Отступы сверху и снизу */
   border: 2px solid #ffffff; /* Цвет границы */
@@ -818,6 +816,8 @@ strong {
   color: rgb(151, 184, 255);
   padding-left: 8px;
 }
+
+
 .footer .mail:hover {
   color: rgb(151, 184, 255);
   padding-left: 8px;
@@ -952,7 +952,7 @@ strong {
   .card {
     font-size: 1rem;
   }
-
+  
   .team-container {
     flex-direction: column; /* Расположить элементы вертикально */
     align-items: center;
