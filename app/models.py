@@ -1,4 +1,4 @@
-from app import app, db
+from app import application, db
 from app import login # Необходимо для пользовательского загрузчика
 
 from time import time
@@ -29,12 +29,12 @@ class User(UserMixin, db.Model):
     
     def get_reset_password_token(self, expires_in=600):
         return jwt.encode(
-            {'reset_password': self.id, 'exp': time() + expires_in}, app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+            {'reset_password': self.id, 'exp': time() + expires_in}, application.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
 
     @staticmethod
     def verify_reset_password_token(token):
         try:
-            id = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])['reset_password']
+            id = jwt.decode(token, application.config['SECRET_KEY'], algorithms=['HS256'])['reset_password']
         except:
             return
         return User.query.get(id)

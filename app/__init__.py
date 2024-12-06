@@ -9,18 +9,18 @@ from flask_mail import Mail
 
 
 # Создание объекта-приложения как экземпляра класса Flask из пакета flask, и настройка конфигурации
-app = Flask(__name__)
-app.config.from_object(Config)
+application = Flask(__name__)
+application.config.from_object(Config)
 
 # Инициализация расширения LoginManager
-login = LoginManager(app)
+login = LoginManager(application)
 
 # Базы данных и миграции
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+db = SQLAlchemy(application)
+migrate = Migrate(application, db)
 
 # Создание экземпляра объекта класса Mail
-mail = Mail(app)
+mail = Mail(application)
 
 
 from app import routes

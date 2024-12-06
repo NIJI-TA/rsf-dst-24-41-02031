@@ -1,4 +1,4 @@
-from app import app
+from app import application
 
 from app import db
 from app.forms import LoginForm, RegistrationForm # Берем наши формы как поля классов в файле forms
@@ -12,12 +12,12 @@ from flask_login import current_user, login_user, logout_user
 
 
 # Routes
-@app.route("/")
+@application.route("/")
 def index():
     return render_template('index.html')
 
 
-@app.route("/login", methods=['GET', 'POST'])
+@application.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -35,14 +35,14 @@ def login():
     return render_template('login.html', title='Вход', form=form)
 
 
-@app.route('/logout')
+@application.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
 
 
 
-@app.route('/register', methods=['GET', 'POST'])
+@application.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -57,7 +57,7 @@ def register():
     return render_template('register.html', title='Регистрация', form=form)
 
 
-@app.route('/reset_password_request', methods=['GET', 'POST'])
+@application.route('/reset_password_request', methods=['GET', 'POST'])
 def reset_password_request():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -71,7 +71,7 @@ def reset_password_request():
     return render_template('reset_password_request.html', title='Сброс пароля', form=form)
 
 
-@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+@application.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
     if current_user.is_authenticated:
         return redirect(url_for('index'))
@@ -88,11 +88,11 @@ def reset_password(token):
 
 
 
-@app.route('/articles')
+@application.route('/articles')
 def articles():
     return render_template('articles.html', title='Статьи')
 
-@app.route('/conferences')
+@application.route('/conferences')
 def conferences():
     return render_template('conferences.html', title='Конференции')
 

@@ -1,4 +1,4 @@
-from app import app
+from app import application
 
 
 
@@ -6,11 +6,11 @@ from app import app
 from app import db
 from app.models import User, Post
 
-@app.shell_context_processor
+@application.shell_context_processor
 def make_shell_context():
     return {'db': db, 'User': User, 'Post': Post}
 
 
 
 if __name__ == "__main__":
-    app.run(debug=True)  # Включаем отладку вручную
+    application.run(debug=True)  # Включаем отладку вручную
