@@ -226,7 +226,6 @@ strong {
   min-width: 70%; /* ширина контейнера меньше, чем на весь экран */
   max-width: 800px;
   min-height: 50%;
-  max-height: 70%;
 }
 
 .box > h2 {
@@ -844,6 +843,96 @@ strong {
   background-color: rgb(151, 184, 255);
 }
 
+
+
+/* Articles */
+
+.fullscreen-container-art {
+  padding: 15vh 5vw 12vh 5vw;
+  margin: 0 auto;
+  display: block;
+  min-height: 100vh;
+  background-color: rgb(13, 3, 38); /* темно-синий фон */
+  margin: 0 auto;
+  min-width: 100%;
+}
+
+.box-art {
+  padding: 5vh 4vw 4vh 5vw;
+  background-color: #111213;
+  border-radius: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.box-art > h2 {
+  padding-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.card-container-art {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 30px;
+}
+
+/* Карточки */
+.card-art {
+  background-color: #303132; /* светлый фон карточки */
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 20px;
+}
+
+
+.card-art h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.card-art strong {
+  font-size: 1.3rem;
+  margin-right: 5px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+
+.card-art p {
+  text-align: left;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.card-art h2 a {
+  color: #ffffff;
+  margin-bottom: 10px;
+  text-align: left;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card-art a:hover {
+  color: rgb(151, 184, 255);
+  padding-left: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Адаптивность */
 @media (max-width: 1700px) {
   .card-container-2 {
@@ -982,7 +1071,7 @@ strong {
 }
 
 @media (max-width: 576px) {
-  .nav-item:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
+  .nav-item:not(:nth-child(1)):not(:nth-child(3)):not(:nth-child(4)) {
     display: none;
   }
   .header {
@@ -1010,6 +1099,43 @@ strong {
     line-height: 30px;
   }
 }
+
+.box-art > h2 {
+  font-size: 2rem;
+}
+
+/* Карточки */
+.card-art {
+  background-color: #303132; /* светлый фон карточки */
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 20px;
+}
+
+.card-art h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: #ffffff;
+  text-align: left;
+}
+
+.card-art strong {
+  font-size: 1rem;
+  margin-right: 5px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+
+.card-art p {
+  text-align: left;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
 
 @media (max-height: 700px) {
   .fullscreen-container-login {
@@ -1081,4 +1207,32 @@ strong {
   .footer h4 {
     font-size: 1rem;
   }
+
+  .box-art > h2 {
+    font-size: 2rem;
+  }
+  
+  /* Карточки */
+  
+  .card-art h2 {
+    font-size: 1rem;
+  }
+
+  .card-art strong {
+    font-size: 0.8rem;
+  }
+
+
+  .box-art > h2 {
+    font-size: 1.8rem;
+  }
+  
+  
+  .card-art p {
+    text-align: left;
+    font-weight: 400;
+    font-size: 0.7rem;
+    color: #ffffff;
+  }
+
 }

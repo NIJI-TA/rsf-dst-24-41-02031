@@ -36,8 +36,8 @@
                     {% block header_list %}
                     <li class="nav-item"><a href="{{url_for('index')}}">Главная</a></li>
                     <li class="nav-item"><a href="">Достижения</a></li>
-                    <li class="nav-item"><a href="">Статьи</a></li>
-                    <li class="nav-item"><a href="">Конфереции</a></li>
+                    <li class="nav-item"><a href="{{url_for('articles')}}">Статьи</a></li>
+                    <li class="nav-item"><a href="{{url_for('conferences')}}">Конфереции</a></li>
                     {% endblock %}
                 </ul>
             </nav>
@@ -79,8 +79,8 @@
                 <h4>Материалы</h4>
                 <ul>
                     <li><a>Достижения</a></li>
-                    <li><a>Статьи</a></li>
-                    <li><a>Конференции</a></li>
+                    <li><a href="{{url_for('articles')}}">Статьи</a></li>
+                    <li><a href="{{url_for('conferences')}}">Конференции</a></li>
                 </ul>
                 <br>
                 <br>

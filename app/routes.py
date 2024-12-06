@@ -85,3 +85,15 @@ def reset_password(token):
         flash('Ваш паспорт был успешно сброшен.')
         return redirect(url_for('login'))
     return render_template('reset_password.html', form=form)
+
+
+
+@app.route('/articles')
+def articles():
+    return render_template('articles.html', title='Статьи')
+
+@app.route('/conferences')
+def conferences():
+    return render_template('conferences.html', title='Конференции')
+
+
