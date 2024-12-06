@@ -5,3 +5,5 @@ __pycache__/
 # Настройки среды разработки
 .vscode/
 *.idea/
+
+flaskenv/
