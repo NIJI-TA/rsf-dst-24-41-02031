@@ -5,6 +5,14 @@
     <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Проект посвящён исследованиям магнитоэлектрических эффектов и применению ИИ для управления
+                            движением и защиты космических аппаратов. Выполняется при поддержке РНФ в сотрудничестве с
+                            СПбГУ. 
+                            Проект посвящен фундаментальным научным исследованиям, а также разработке новых технических решений в области математического моделирования и анализа суперпозиции гравитационных и магнито-электрических эффектов в задачах динамики и управления орбитальным и угловым движением космических аппаратов (КА) и группировками КА, в том числе с использованием методов искусственного интеллекта (ИИ). Основным объектом исследования являются КА и группировки КА, взаимодействующие с геомагнитным полем посредством лоренцевых сил и моментов, а также моментов, обусловленным магнитным взаимодействием.">
+    <meta name="keywords" content="научный проект, технологии, исследования, инновации, математика, физика, космические аппараты, космос, Мат-Мех, Математико-Механический факультет, СПбГУ, РНФ, пространство, спейс, math-mech, math, mechanics, projects, space, spbu, SPbU">
+    <meta name="author" content="Тихонов Алексей Александрович, СПбГУ">
+    <link rel="canonical" href="https://math-mech-space.ru/">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,9 +43,17 @@
                 <ul class="nav-list">
                     {% block header_list %}
                     <li class="nav-item"><a href="{{url_for('index')}}">Главная</a></li>
-                    <li class="nav-item"><a href="">Достижения</a></li>
-                    <li class="nav-item"><a href="{{url_for('articles')}}">Статьи</a></li>
-                    <li class="nav-item"><a href="{{url_for('conferences')}}">Конфереции</a></li>
+                    <li class="nav-item">
+                        <a href="#">Достижения</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="dropdown-toggle">Материалы <span class="arrow"><i
+                                    class="fa fa-angle-up"></i></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url_for('articles')}}">Статьи</a></li>
+                            <li><a href="{{url_for('conferences')}}">Конференции</a></li>
+                        </ul>
+                    </li>
                     {% endblock %}
                 </ul>
             </nav>

@@ -25,7 +25,7 @@ html {
 
 /* Основные настройки сайта */
 body {
-  color: #e2e6e9;
+  color: #ffffff;
   background-color: #111213;
 }
 
@@ -60,7 +60,7 @@ strong {
   display: flex;
   justify-content: center;
   position: fixed;
-  font-weight: 200;
+  font-weight: 700;
   top: 0;
   left: 0;
   width: 100%;
@@ -93,36 +93,107 @@ strong {
 }
 .header-actions a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7); /* Белый с 50% прозрачности */
-  font-size: 1em;
+  color: rgba(255, 255, 255, 0.55); 
+  font-size: 1.12em;
   transition: font-size 0.2s;
 }
 
 .header-actions a:hover {
   color: #ffffff;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .nav-item a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7); /* Белый с 50% прозрачности */
-  font-size: 1em;
+  color: rgba(255, 255, 255, 0.55); /* Белый с 50% прозрачности */
+  font-size: 1.12em;
   transition: font-size 0.2s;
 }
 
-.nav-item a:hover {
+
+.nav-item:not(:nth-child(3)) a:hover {
   color: #ffffff;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 .header.scroll-active {
   background: linear-gradient(135deg, #111213, #0d0326, #111213);
-
   transition: background-color 0.3s; /* Плавный переход цвета */
 }
 
+.header.scroll-active .header-actions a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header.scroll-active .nav-item a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+
 .header.scroll-active .nav-item a:hover {
   color: #ffffff; /* Контрастный текст */
+}
+
+.header-nav {
+  position: relative;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item a {
+  display: block;
+  cursor: pointer;
+}
+
+.nav-item .dropdown-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item .arrow {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+
+.nav-item:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.nav-item .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  list-style: none;
+  padding: 10px 0px;
+  min-width: 150px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(0px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.nav-item .dropdown-menu li a {
+  padding: 10px 15px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.nav-item .dropdown-menu li a:hover {
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
 }
 
 /* Блок Hero */
@@ -159,9 +230,9 @@ strong {
 .hero h1 {
   font-size: clamp(2rem, 4vw, 4rem);
   font-weight: 700;
+  text-transform: uppercase;
   margin: 0 0 20px;
   line-height: 1.2;
-  text-transform: uppercase;
 }
 .hero h2 {
   text-transform: uppercase;
@@ -231,6 +302,7 @@ strong {
 .box > h2 {
   margin-bottom: 5%;
   font-size: 2.5rem;
+  text-transform: uppercase;
 }
 
 .card-container {
@@ -256,6 +328,7 @@ strong {
 }
 
 .card h4 {
+  text-transform: uppercase;
   font-size: 1.2rem;
   color: #ffffff;
   margin-bottom: 5px;
@@ -326,6 +399,7 @@ strong {
 }
 
 .box-2 > h2 {
+  text-transform: uppercase;
   margin-bottom: 5%;
   font-size: 2.5rem;
 }
@@ -360,6 +434,7 @@ strong {
 }
 
 .box-3 h2 {
+  text-transform: uppercase;
   margin-bottom: 2%;
   font-size: 2.5rem;
   color: #ffffff;
@@ -385,6 +460,7 @@ strong {
   padding: 20px;
 }
 .card-2 h4 {
+  text-transform: uppercase;
   font-size: 1.2rem;
   color: #ffffff;
   margin-bottom: 5px;
@@ -413,6 +489,7 @@ strong {
 }
 
 .fullscreen-container-4 > .box > h2 {
+  text-transform: uppercase;
   margin-bottom: 2%;
   font-size: 2.5rem;
   color: #000000;
@@ -439,6 +516,7 @@ strong {
 }
 
 .box-4 > h2 {
+  text-transform: uppercase;
   margin-bottom: 2%;
   font-size: 2.5rem;
 }
@@ -957,7 +1035,7 @@ strong {
 
 @media (max-width: 992px) {
   .header-container {
-    text-align: center;
+    margin: 0 auto;
   }
 
   .nav-list {
@@ -968,7 +1046,7 @@ strong {
     height: auto;
   }
   .hero-content {
-    padding: 10px;
+    padding: 20px;
   }
 
   .team-photo {
@@ -1071,14 +1149,11 @@ strong {
 }
 
 @media (max-width: 576px) {
-  .nav-item:not(:nth-child(1)):not(:nth-child(3)):not(:nth-child(4)) {
+  .nav-item:not(:nth-child(1)):not(:nth-child(3)) {
     display: none;
   }
-  .header {
-    padding: 10px;
-  }
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   .hero h2 {
     font-size: 1rem;
@@ -1153,12 +1228,12 @@ strong {
   }
 
   .header-container {
-    padding: 5px;
+    padding: 15px;
   }
 
   .nav-list,
   .header-actions {
-    gap: 10px;
+    gap: 8px;
   }
 
   .hero-content {
@@ -1208,8 +1283,21 @@ strong {
     font-size: 1rem;
   }
 
-  .box-art > h2 {
-    font-size: 2rem;
+  .box-3 h2 {
+    font-size: 1.8rem;
+  }
+
+  .box-2 h2 {
+    font-size: 1.8rem;
+  }
+
+
+  .box h2 {
+    font-size: 1.8rem;
+  }
+
+  .fullscreen-container-4 > .box > h2 {
+    font-size: 1.8rem;
   }
   
   /* Карточки */
