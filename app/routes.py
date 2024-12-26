@@ -95,5 +95,3 @@ def articles():
 @application.route('/conferences')
 def conferences():
     return render_template('conferences.html', title='Конференции')
-
-

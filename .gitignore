@@ -7,3 +7,8 @@ __pycache__/
 *.idea/
 
 flaskenv/
+
+# Конфигурация Flask приложения
+config.py
+.env
+app.db
