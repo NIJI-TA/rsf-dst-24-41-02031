@@ -12,3 +12,4 @@ flaskenv/
 config.py
 .env
 app.db
+passenger_wsgi.py
