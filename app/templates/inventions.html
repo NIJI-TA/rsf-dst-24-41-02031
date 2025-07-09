@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+
+{% block header_list %}
+{{ super() }}
+{% endblock %}
+
+{% block header_actions %}
+{{ super() }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- Inventions -->
+<div id="about" class="fullscreen-container-art">
+    <div class="box-art">
+        <h2 data-aos="fade-right" data-aos-duration="600">ИЗОБРЕТЕНИЯ</h2>
+        <div class="card-container-art two-columns">
+            <div class="card-art" data-aos="fade-up" data-aos-duration="400">
+                <h2><a href="https://fips.ru/registers-doc-view/fips_servlet?DB=RUPAT&DocNumber=2841573&TypeFile=html">Патент
+                        на изобретение № 2841573</a></h2>
+                <hr>
+                <h2>"Способ трехосной стабилизации экранированного
+                    космического аппарата с центрально-симметричным
+                    распределением заряда электростатической защиты и
+                    устройство для его реализации"</h2>
+                <div class="card-content">
+                    <div class="text-column">
+                        <p><strong>Автор:</strong>A.A. Тихонов</p>
+                        <p><strong>Патентообладатель:</strong>Федеральное государственное бюджетное
+                            образовательное учреждение высшего образования
+                            "Санкт-Петербургский государственный университет"
+                            (СПбГУ)" (RU)</p>
+                        <p><strong>Дата регистрации:</strong>10 июня 2025</p>
+                    </div>
+                    <div class="image-column">
+                        <img src="../static/images/Patent_Tikhonov_2841573.png" alt="Патент на изобретение № 2841573"
+                            class="justphoto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

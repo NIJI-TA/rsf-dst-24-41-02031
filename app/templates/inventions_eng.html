@@ -1,0 +1,48 @@
+{% extends 'base_eng.html' %}
+
+
+
+{% block header_list %}
+{{ super() }}
+{% endblock %}
+
+{% block header_actions %}
+{{ super() }}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<!-- Inventions -->
+<div id="about" class="fullscreen-container-art">
+    <div class="box-art">
+        <h2 data-aos="fade-right" data-aos-duration="600">INVENTIONS</h2>
+
+        <div class="card-container-art two-columns">
+            <div class="card-art" data-aos="fade-up" data-aos-duration="400">
+                <h2><a href="https://fips.ru/registers-doc-view/fips_servlet?DB=RUPAT&DocNumber=2841573&TypeFile=html">Patent
+                        for an invention № 2841573</a></h2>
+                <hr>
+                <h2>"A method for three-axis stabilization of a shielded SC
+                    with a centrally symmetrical charge distributed on electrostatic protectio
+                    and a device for its implementation"</h2>
+                <div class="card-content">
+                    <div class="text-column">
+                        <p><strong>Author:</strong>A.A. Tikhonov</p>
+                        <p><strong>The patent holder:</strong>Saint-Petersburg University (RU)</p>
+                        <p><strong>Registration date:</strong>June 10, 2025</p>
+                    </div>
+                    <div class="image-column">
+                        <img src="../static/images/Patent_Tikhonov_2841573.png" alt="Patent for an invention № 2841573"
+                            class="justphoto">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

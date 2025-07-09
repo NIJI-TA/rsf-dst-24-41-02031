@@ -1,97 +1,54 @@
 from app import application
 
-from app import db
-from app.forms import LoginForm, RegistrationForm # Берем наши формы как поля классов в файле forms
-from app.models import User, Post
-from app.forms import ResetPasswordRequestForm
-from app.email import send_password_reset_email
-from app.forms import ResetPasswordForm
-
-from flask import url_for, render_template, flash, request, redirect
-from flask_login import current_user, login_user, logout_user
+from flask import render_template
 
 
 # Routes
 @application.route("/")
 def index():
-    return render_template('index.html')
+    return render_template("index.html", title="math-mech-space")
 
 
-@application.route("/login", methods=['GET', 'POST'])
-def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    
-    form = LoginForm() # Берем данные полученные из формы
-    if form.validate_on_submit(): # Если все верно
-        # Пытаемся найти пользователя (при таком запросе получим либо пользователя из БД, либо None)
-        user = User.query.filter_by(username=form.username.data).first()
-        if user is None or not user.check_password(form.password.data):
-            flash('Неправильное имя пользователя или пароль')
-            return redirect(url_for('login')) # Повторно загружаем страницу авторизации
-        login_user(user, form.remember_me.data) # Регистрируем пользователя с помощью функции из flask-login
-        return redirect(url_for('index')) # Переходим на главную страницу
-    
-    return render_template('login.html', title='Вход', form=form)
+@application.route("/eng")
+def index_eng():
+    return render_template("index_eng.html", title="math-mech-space")
 
 
-@application.route('/logout')
-def logout():
-    logout_user()
-    return redirect(url_for('index'))
-
-
-
-@application.route('/register', methods=['GET', 'POST'])
-def register():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form = RegistrationForm()
-    if form.validate_on_submit():
-        user = User(username=form.username.data, email=form.email.data)
-        user.set_password(form.password.data)
-        db.session.add(user)
-        db.session.commit()
-        flash('Вы успешно зарегистрированы!')
-        return redirect(url_for('login'))
-    return render_template('register.html', title='Регистрация', form=form)
-
-
-@application.route('/reset_password_request', methods=['GET', 'POST'])
-def reset_password_request():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    form = ResetPasswordRequestForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        if user:
-            send_password_reset_email(user)
-        flash('Инструкция по сбросу пароля была отправлена на указанную почту')
-        return redirect(url_for('login'))
-    return render_template('reset_password_request.html', title='Сброс пароля', form=form)
-
-
-@application.route('/reset_password/<token>', methods=['GET', 'POST'])
-def reset_password(token):
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
-    user = User.verify_reset_password_token(token)
-    if not user:
-        return redirect(url_for('index'))
-    form = ResetPasswordForm()
-    if form.validate_on_submit():
-        user.set_password(form.password.data)
-        db.session.commit()
-        flash('Ваш паспорт был успешно сброшен.')
-        return redirect(url_for('login'))
-    return render_template('reset_password.html', form=form)
-
-
-
-@application.route('/articles')
+@application.route("/articles")
 def articles():
-    return render_template('articles.html', title='Статьи')
+    return render_template("articles.html", title="math-mech-space: Статьи")
 
-@application.route('/conferences')
+
+@application.route("/articles/eng")
+def articles_eng():
+    return render_template("articles_eng.html", title="math-mech-space: Articles")
+
+
+@application.route("/conferences")
 def conferences():
-    return render_template('conferences.html', title='Конференции')
+    return render_template("conferences.html", title="math-mech-space: Конференции")
+
+
+@application.route("/conferences/eng")
+def conferences_eng():
+    return render_template("conferences_eng.html", title="math-mech-space: Conferences")
+
+
+@application.route("/news")
+def news():
+    return render_template("news.html", title="math-mech-space: Новости")
+
+
+@application.route("/news/eng")
+def news_eng():
+    return render_template("news_eng.html", title="math-mech-space: News")
+
+
+@application.route("/inventions")
+def inventions():
+    return render_template("inventions.html", title="math-mech-space: Изобретения")
+
+
+@application.route("/inventions/eng")
+def inventions_eng():
+    return render_template("inventions_eng.html", title="math-mech-space: Inventions")

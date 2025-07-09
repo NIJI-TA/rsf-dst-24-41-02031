@@ -8,8 +8,4 @@ __pycache__/
 
 flaskenv/
 
-# Конфигурация Flask приложения
-config.py
-.env
-app.db
-passenger_wsgi.py
+passenger_wsgi.pyvenv/

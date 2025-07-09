@@ -18,6 +18,7 @@ html {
   background-color: black;
   width: 0.5vw;
 }
+
 ::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 0.2vw;
@@ -91,9 +92,10 @@ strong {
   justify-content: space-between;
   list-style: none;
 }
+
 .header-actions a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.55); 
+  color: rgba(255, 255, 255, 0.55);
   font-size: 1.12em;
   transition: font-size 0.2s;
 }
@@ -105,7 +107,8 @@ strong {
 
 .nav-item a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.55); /* Белый с 50% прозрачности */
+  color: rgba(189, 189, 189, 0.957);
+  /* Белый с 50% прозрачности */
   font-size: 1.12em;
   transition: font-size 0.2s;
 }
@@ -118,7 +121,8 @@ strong {
 
 .header.scroll-active {
   background: linear-gradient(135deg, #111213, #0d0326, #111213);
-  transition: background-color 0.3s; /* Плавный переход цвета */
+  transition: background-color 0.3s;
+  /* Плавный переход цвета */
 }
 
 .header.scroll-active .header-actions a {
@@ -132,7 +136,8 @@ strong {
 
 
 .header.scroll-active .nav-item a:hover {
-  color: #ffffff; /* Контрастный текст */
+  color: #ffffff;
+  /* Контрастный текст */
 }
 
 .header-nav {
@@ -168,10 +173,10 @@ strong {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(94, 94, 94, 0.92);
   backdrop-filter: blur(5px);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  border-radius: 2px;
+  border-radius: 1px;
   list-style: none;
   padding: 10px 0px;
   min-width: 150px;
@@ -183,7 +188,7 @@ strong {
 
 .nav-item .dropdown-menu li a {
   padding: 10px 15px;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.683);
 }
 
 .nav-item .dropdown-menu li a:hover {
@@ -198,13 +203,11 @@ strong {
 
 /* Блок Hero */
 .hero {
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       rgba(0, 0, 0, 0.8),
       rgba(0, 0, 0, 0.7),
       rgba(13, 3, 38, 0.5),
-      rgb(13, 3, 38, 1)
-    ),
+      rgb(13, 3, 38, 1)),
     url("../images/7935.jpg") center/cover no-repeat;
   background-size: cover;
   background-position: center;
@@ -223,7 +226,8 @@ strong {
   position: relative;
   z-index: 2;
   max-width: 1000px;
-  text-align: left; /* Текст выровнен по левому краю */
+  text-align: left;
+  /* Текст выровнен по левому краю */
   padding: 20px;
 }
 
@@ -234,11 +238,13 @@ strong {
   margin: 0 0 20px;
   line-height: 1.2;
 }
+
 .hero h2 {
   text-transform: uppercase;
   margin: 0 0 20px;
   font-size: clamp(1rem, 2vw, 2rem);
-  color: #979797; /* Белый с 50% прозрачности */
+  color: #979797;
+  /* Белый с 50% прозрачности */
 }
 
 /* Анимация текста с помощью AOS */
@@ -266,14 +272,17 @@ strong {
 
 [data-aos="fade-out"] {
   opacity: 1;
-  transform: translateY(0); /* Элемент остаётся на месте */
+  transform: translateY(0);
+  /* Элемент остаётся на месте */
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 /* Состояние при активации анимации */
 [data-aos="fade-out"].aos-animate {
-  opacity: 0; /* Текст постепенно исчезает */
-  transform: translateY(-20px); /* Текст поднимается немного вверх */
+  opacity: 0;
+  /* Текст постепенно исчезает */
+  transform: translateY(-20px);
+  /* Текст поднимается немного вверх */
 }
 
 /* Основной контент */
@@ -286,7 +295,8 @@ strong {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: rgb(13, 3, 38); /* темно-синий фон */
+  background-color: rgb(13, 3, 38);
+  /* темно-синий фон */
 }
 
 .box {
@@ -294,12 +304,13 @@ strong {
   background-color: #111213;
   border-radius: 1px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  min-width: 70%; /* ширина контейнера меньше, чем на весь экран */
+  min-width: 70%;
+  /* ширина контейнера меньше, чем на весь экран */
   max-width: 800px;
   min-height: 50%;
 }
 
-.box > h2 {
+.box>h2 {
   margin-bottom: 5%;
   font-size: 2.5rem;
   text-transform: uppercase;
@@ -307,13 +318,14 @@ strong {
 
 .card-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* две колонки */
+  grid-template-columns: repeat(2, 1fr);
+  /* две колонки */
   grid-gap: 15px;
 }
 
-/* Карточки */
 .card {
-  background-color: #303132; /* светлый фон карточки */
+  background-color: #303132;
+  /* светлый фон карточки */
   border-radius: 1.5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -337,7 +349,7 @@ strong {
 
 .card p {
   text-align: left;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #ffffff;
 }
 
@@ -393,18 +405,19 @@ strong {
 
 .box-2 {
   padding: 5vh 5vw 5vh 5vw;
-  min-width: 70%; /* ширина контейнера меньше, чем на весь экран */
+  min-width: 70%;
+  /* ширина контейнера меньше, чем на весь экран */
   max-width: 800px;
   min-height: 50%;
 }
 
-.box-2 > h2 {
+.box-2>h2 {
   text-transform: uppercase;
   margin-bottom: 5%;
   font-size: 2.5rem;
 }
 
-.box-2 > p {
+.box-2>p {
   text-align: left;
   font-size: 1.2rem;
   color: #e2e6e9;
@@ -417,18 +430,17 @@ strong {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       rgb(17, 18, 19),
       rgba(13, 3, 38, 0.5),
-      rgba(13, 3, 38, 1)
-    ),
+      rgba(13, 3, 38, 1)),
     url("../images/space-galaxy-background.jpg") center/cover no-repeat;
 }
 
 .box-3 {
   padding: 5vh 5vw 10vh 5vw;
-  min-width: 70%; /* ширина контейнера меньше, чем на весь экран */
+  min-width: 70%;
+  /* ширина контейнера меньше, чем на весь экран */
   max-width: 800px;
   min-height: 70%;
 }
@@ -449,7 +461,8 @@ strong {
 
 .card-container-2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* две колонки */
+  grid-template-columns: repeat(3, 1fr);
+  /* две колонки */
   grid-gap: 15px;
 }
 
@@ -459,6 +472,7 @@ strong {
   transition: transform 0.2s, box-shadow 0.2s;
   padding: 20px;
 }
+
 .card-2 h4 {
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -467,6 +481,7 @@ strong {
   text-align: left;
   margin-left: -20px;
 }
+
 .card-2 p {
   padding-left: 5px;
   border-left: 4px solid rgb(151, 184, 255);
@@ -481,21 +496,22 @@ strong {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: rgb(13, 3, 38); /* темно-синий фон */
+  background-color: rgb(13, 3, 38);
+  /* темно-синий фон */
 }
 
-.fullscreen-container-4 > .box {
+.fullscreen-container-4>.box {
   background-color: rgb(151, 184, 255);
 }
 
-.fullscreen-container-4 > .box > h2 {
+.fullscreen-container-4>.box>h2 {
   text-transform: uppercase;
   margin-bottom: 2%;
   font-size: 2.5rem;
   color: #000000;
 }
 
-.fullscreen-container-4 > .box > p {
+.fullscreen-container-4>.box>p {
   text-align: left;
   font-size: 1.2rem;
   color: #000000;
@@ -510,17 +526,19 @@ strong {
 
 .box-4 {
   padding: 0;
-  min-width: 70%; /* ширина контейнера меньше, чем на весь экран */
+  min-width: 70%;
+  /* ширина контейнера меньше, чем на весь экран */
   max-width: 800px;
   min-height: 50%;
 }
 
-.box-4 > h2 {
+.box-4>h2 {
   text-transform: uppercase;
   margin-bottom: 2%;
   font-size: 2.5rem;
 }
-.box-4 > p {
+
+.box-4>p {
   text-align: left;
   font-size: 1.2rem;
   color: #e2e6e9;
@@ -535,20 +553,19 @@ strong {
   justify-content: center;
   align-items: center;
   min-height: 90vh;
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       rgba(13, 3, 38, 1),
       rgba(13, 3, 38, 0.8),
       rgba(13, 3, 38, 0.7),
       rgba(17, 18, 19, 0.7),
-      rgba(17, 18, 19, 1)
-    ),
+      rgba(17, 18, 19, 1)),
     url("../images/7935.jpg") center/cover no-repeat;
 }
 
 .card-container-4 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* две колонки */
+  grid-template-columns: repeat(3, 1fr);
+  /* две колонки */
   grid-gap: 30px;
 }
 
@@ -560,14 +577,19 @@ strong {
 }
 
 .team-member {
-  display: flex; /* Включаем Flexbox */
-  flex-direction: row; /* Расположение в строку */
-  align-items: center; /* Центровка по вертикали */
+  display: flex;
+  /* Включаем Flexbox */
+  flex-direction: row;
+  /* Расположение в строку */
+  align-items: center;
+  /* Центровка по вертикали */
   background-color: transparent;
   border-radius: 3px;
   padding: 30px;
-  text-align: left; /* Текст выравнивается по левому краю */
-  max-width: 400px; /* Увеличьте ширину, если нужно */
+  text-align: left;
+  /* Текст выравнивается по левому краю */
+  max-width: 400px;
+  /* Увеличьте ширину, если нужно */
 }
 
 .team-photo {
@@ -575,258 +597,11 @@ strong {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 15px; /* Расстояние между фото и текстом */
-  margin-bottom: 0; /* Убираем отступ снизу */
+  margin-right: 15px;
+  /* Расстояние между фото и текстом */
+  margin-bottom: 0;
+  /* Убираем отступ снизу */
 }
-
-.fullscreen-container-login {
-  width: 100%;
-  padding-top: 30px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(
-      to top,
-      rgb(17, 18, 19),
-      rgba(13, 3, 38, 0.5),
-      rgba(13, 3, 38, 1)
-    ),
-    url("../images/space-galaxy-background.jpg") center/cover no-repeat;
-}
-
-.box-login {
-  margin: 5vh 5vw 5vh 5vw;
-  background-color: rgb(17, 18, 19, 0);
-  border-radius: 2px;
-  max-width: 800px;
-  min-height: 400px;
-  max-height: 70vh;
-  text-align: center;
-}
-
-.box-login h2 {
-  margin-bottom: 5%;
-  font-size: 2.5rem;
-}
-
-.card-container-login {
-  display: flex;
-  margin: 0;
-  flex-direction: column;
-}
-
-/* Карточки */
-.card-login {
-  background-color: rgba(13, 3, 38, 0);
-  border-radius: 2px;
-  font-size: 1.2rem;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  grid-gap: 15px;
-  margin: 0;
-}
-
-.card-login h4 {
-  font-size: 1.2rem;
-  color: #ffffff;
-  margin-bottom: 5px;
-}
-
-.card-login p {
-  font-size: 1rem;
-  color: #ffffff;
-  font-weight: 400;
-}
-
-.card-login a {
-  font-size: 1rem;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 200;
-  padding: 10px;
-  transition: all 0.2s ease;
-}
-.card-login a:hover {
-  color: rgb(151, 184, 255);
-  font-size: 1.01rem;
-}
-
-.login-btn {
-  background-color: rgb(151, 184, 255); /* Зелёный фон */
-  color: white; /* Белый текст */
-  border: none; /* Без границы */
-  padding: 8px 20px; /* Внутренние отступы */
-  text-align: center; /* Центрирование текста */
-  font-size: 1rem; /* Размер шрифта */
-  cursor: pointer; /* Курсор указывает на кликабельность */
-  border-radius: 2px; /* Скругленные углы */
-  transform: translateY(+3px);
-}
-
-.login-btn:hover {
-  background-color: rgb(190, 210, 255); /* Темнее при наведении */
-}
-
-.custom-input {
-  /* Растянуть на всю ширину контейнера */
-  width: 100%;
-  padding: 10px; /* Внутренние отступы */
-  margin: 15px 0; /* Отступы сверху и снизу */
-  border: 2px solid #fff; /* Цвет границы */
-  border-radius: 2px; /* Скругленные углы */
-  font-size: 16px; /* Размер текста */
-  background: rgba(255, 255, 255, 0.95); /* Белый фон */
-  color: rgba(51, 51, 51); /* Цвет текста */
-  transition: all 0.2s ease;
-}
-
-.custom-input:hover {
-  border-color: rgb(150, 182, 255); /* Изменение цвета границы при фокусе */
-  outline: none; /* Убрать стандартный обвод */
-  /* Лёгкая подсветка */
-}
-
-.custom-input:focus {
-  border-color: rgb(150, 182, 255); /* Изменение цвета границы при фокусе */
-  outline: none; /* Убрать стандартный обвод */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Лёгкая подсветка */
-  background: #ffffff;
-}
-
-.login {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 20px;
-}
-.login div {
-  font-weight: 300;
-  font-size: 1rem;
-  color: rgb(150, 182, 255);
-}
-
-.remember-me {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Расстояние между чекбоксом и текстом */
-}
-
-.custom-checkbox {
-  appearance: none; /* Скрыть стандартный чекбокс */
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgb(150, 182, 255);
-  border-radius: 1px;
-  background-color: #fff;
-  cursor: pointer;
-  transform: translateY(+7px);
-  transition: all 0.2s ease;
-}
-
-.custom-checkbox:checked {
-  background-color: #ffffff;
-  border-color: rgb(150, 182, 255);
-}
-
-.custom-checkbox:checked::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 10px;
-  background-color: rgb(150, 182, 255);
-  border-radius: 1px;
-}
-
-.reg-pass {
-  display: flex;
-  justify-content: space-between;
-}
-
-.reg-pass {
-  display: flex;
-  flex-direction: row;
-  grid-gap: 15px;
-  margin: 0;
-  padding-bottom: 20px;
-}
-
-.reg-pass div {
-  flex: 1;
-}
-
-
-
-.card-container-reg {
-  display: flex;
-  margin: 0;
-  flex-direction: column;
-}
-
-.card-container-reg .custom-input {
-  /* Растянуть почти на всю ширину контейнера */
-  width: 100%;
-  padding: 8px; /* Внутренние отступы */
-  margin: 10px 0; /* Отступы сверху и снизу */
-  border: 2px solid #ffffff; /* Цвет границы */
-  border-radius: 2px; /* Скругленные углы */
-  font-size: 14px; /* Размер текста */
-  background: rgba(255, 255, 255, 0.95); /* Белый фон */
-  color: #333; /* Цвет текста */
-  transition: all 0.2s ease;
-}
-
-.card-container-reg .custom-input:hover {
-  border-color: rgb(150, 182, 255); /* Изменение цвета границы при фокусе */
-  outline: none; /* Убрать стандартный обвод */
-  /* Лёгкая подсветка */
-}
-
-.card-container-reg .custom-input:focus {
-  border-color: rgb(150, 182, 255); /* Изменение цвета границы при фокусе */
-  outline: none; /* Убрать стандартный обвод */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Лёгкая подсветка */
-  background: #ffffff;
-}
-
-.card-container-reg .card-login a {
-  font-size: 1rem;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 200;
-  padding: 5px;
-  transition: all 0.2s ease;
-}
-
-.card-container-reg .card-login a:hover {
-  color: rgb(151, 184, 255);
-  font-size: 1.01rem;
-}
-
-/* Футер 
-.footer {
-  background-color: rgb(17, 18, 19);
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-.footer a {
-  font-weight: 100;
-  margin: 0;
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: rgba(151, 184, 255, 1);
-}*/
-
-/* Адаптивность */
 
 .footer {
   padding-top: 10vh;
@@ -841,7 +616,7 @@ strong {
 .footer-row {
   padding: 30px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 0.8fr 1.2fr;
   grid-gap: 15px;
 }
 
@@ -880,6 +655,7 @@ strong {
 .footer ul li:not(:last-child) {
   margin-bottom: 10px;
 }
+
 .footer a {
   font-size: 1rem;
   color: #ffffff;
@@ -889,6 +665,7 @@ strong {
   transition: all 0.3s ease;
   margin-bottom: 10px;
 }
+
 .footer ul li a:hover {
   color: rgb(151, 184, 255);
   padding-left: 8px;
@@ -916,6 +693,7 @@ strong {
   color: #e2e6e9;
   transition: all 0.5s ease;
 }
+
 .footer .social-links a:hover {
   color: #111213;
   background-color: rgb(151, 184, 255);
@@ -930,7 +708,8 @@ strong {
   margin: 0 auto;
   display: block;
   min-height: 100vh;
-  background-color: rgb(13, 3, 38); /* темно-синий фон */
+  background-color: rgb(13, 3, 38);
+  /* темно-синий фон */
   margin: 0 auto;
   min-width: 100%;
 }
@@ -943,20 +722,82 @@ strong {
   width: 100%;
 }
 
-.box-art > h2 {
+.box-art>h2 {
   padding-bottom: 40px;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
 }
 
 .card-container-art {
   display: flex;
   flex-direction: column;
   grid-gap: 30px;
+  padding-top: 30px;
 }
 
 /* Карточки */
+.card-container-art .card-container {
+  margin-bottom: 20px;
+  /* или любое другое значение */
+}
+
+.card-container-art .card {
+  background-color: #3d3e3f;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1)
+}
+
+.card-container-art.two-columns .card-art {
+  padding: 20;
+}
+
+.card-container-art.two-columns .card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.card-container-art.two-columns .text-column {
+  flex: 1;
+  padding-right: 20px;
+  text-align: left;
+}
+
+.card-container-art.two-columns .image-column {
+  width: 300px;
+  /* Фиксированная ширина для колонки с фото */
+  min-width: 300px;
+  /* Минимальная ширина */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.justphoto {
+  width: auto;
+  height: 400px;
+  max-width: 100%;
+  border-radius: 3px;
+  object-fit: contain;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 5px;
+}
+
+/* Контейнер для фотографий (горизонтальное расположение) */
+.justphoto-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
 .card-art {
-  background-color: #303132; /* светлый фон карточки */
+  background-color: #303132;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -967,13 +808,14 @@ strong {
 
 .card-art h2 {
   margin-bottom: 10px;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: #ffffff;
+  text-transform: uppercase;
   text-align: left;
 }
 
 .card-art strong {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   margin-right: 5px;
   font-weight: 600;
   color: #ffffff;
@@ -982,28 +824,42 @@ strong {
 
 .card-art p {
   text-align: left;
-  font-weight: 400;
-  font-size: 1.2rem;
-  color: #ffffff;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #dbe2fb;
 }
+
+.card-art p a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 400;
+}
+
+.card-art p a:hover {
+  color: rgb(151, 184, 255);
+}
+
 
 .card-art h2 a {
   color: #ffffff;
   margin-bottom: 10px;
   text-align: left;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
   font-weight: 600;
 }
 
-.card-art a:hover {
+.card-art h2 a:hover {
   color: rgb(151, 184, 255);
   padding-left: 3px;
 }
 
-
-
-
+.data {
+  margin-bottom: 0;
+  color: rgb(196, 210, 239);
+  text-align: right;
+}
 
 
 
@@ -1014,7 +870,8 @@ strong {
 /* Адаптивность */
 @media (max-width: 1700px) {
   .card-container-2 {
-    grid-template-columns: 1fr; /* Одна колонка карточек */
+    grid-template-columns: 1fr;
+    /* Одна колонка карточек */
   }
 }
 
@@ -1022,14 +879,18 @@ strong {
   .header-container {
     gap: 20px;
   }
+
   .hero h1 {
     font-size: clamp(1.8rem, 3.5vw, 3.5rem);
   }
+
   .hero h2 {
     font-size: clamp(0.9rem, 1.5vw, 1.8rem);
   }
+
   .card-container {
-    grid-template-columns: 1fr; /* Одна колонка для карточек */
+    grid-template-columns: 1fr;
+    /* Одна колонка для карточек */
   }
 }
 
@@ -1041,16 +902,19 @@ strong {
   .nav-list {
     gap: 20px;
   }
+
   .hero {
     padding: 15px;
     height: auto;
   }
+
   .hero-content {
     padding: 20px;
   }
 
   .team-photo {
-    margin: 0 auto 15px; /* Центровка фото */
+    margin: 0 auto 15px;
+    /* Центровка фото */
   }
 
   .team-member {
@@ -1059,6 +923,7 @@ strong {
     text-align: center;
     flex: 1;
   }
+
   .team-container {
     display: flex;
     justify-content: space-evenly;
@@ -1067,20 +932,42 @@ strong {
 }
 
 @media (max-width: 768px) {
+
   /* Перенос меню в одну строку */
+  .footer-col-3 ul {
+    padding-inline-start: 0;
+  }
+
+  .card-container-art.two-columns .card-content {
+    flex-direction: column;
+  }
+
+  .card-container-art.two-columns .text-column {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .card-container-art.two-columns .image-column {
+    width: 100%;
+    min-width: auto;
+  }
+
   .nav-list {
     justify-content: space-between;
     gap: 15px;
     width: 100%;
-    padding: 0 10px; /* Отступы слева и справа */
+    padding: 0 10px;
+    /* Отступы слева и справа */
   }
 
   .header {
-    padding: 10px 0; /* Уменьшаем внутренние отступы */
+    padding: 10px 0;
+    /* Уменьшаем внутренние отступы */
   }
 
   .nav-item a {
-    font-size: 0.9rem; /* Уменьшаем размер шрифта для мобильных устройств */
+    font-size: 0.9rem;
+    /* Уменьшаем размер шрифта для мобильных устройств */
   }
 
   /* Если нужно дополнительно центрировать меню */
@@ -1091,11 +978,13 @@ strong {
 
   .card-container,
   .card-container-2 {
-    grid-template-columns: 1fr; /* Одна колонка карточек */
+    grid-template-columns: 1fr;
+    /* Одна колонка карточек */
   }
 
   .card-container-4 {
-    grid-template-columns: 1fr; /* Одна колонка */
+    grid-template-columns: 1fr;
+    /* Одна колонка */
   }
 
   .box {
@@ -1119,14 +1008,16 @@ strong {
   .card {
     font-size: 1rem;
   }
-  
+
   .team-container {
-    flex-direction: column; /* Расположить элементы вертикально */
+    flex-direction: column;
+    /* Расположить элементы вертикально */
     align-items: center;
   }
 
   .footer-row {
-    grid-template-columns: 1fr; /* Одна колонка */
+    grid-template-columns: 1fr;
+    /* Одна колонка */
     text-align: center;
   }
 
@@ -1138,50 +1029,61 @@ strong {
   .footer .mail {
     transform: translateX(0px);
   }
+
   .footer .social-links a {
     transform: translateX(0px);
   }
 
   .footer h4::before {
-    left: 50%; /* Центровать линию под заголовком */
+    left: 50%;
+    /* Центровать линию под заголовком */
     transform: translateX(-50%);
   }
 }
 
 @media (max-width: 576px) {
-  .nav-item:not(:nth-child(1)):not(:nth-child(3)) {
+  .nav-item:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)) {
     display: none;
   }
+
   .hero h1 {
     font-size: 1.6rem;
   }
+
   .hero h2 {
     font-size: 1rem;
   }
+
   .card-container,
   .card-container-2,
   .card-container-4 {
-    grid-template-columns: 1fr; /* Полная ширина для карточек */
+    grid-template-columns: 1fr;
+    /* Полная ширина для карточек */
   }
+
   .footer-row {
-    grid-template-columns: 1fr; /* Все блоки в один столбец */
+    grid-template-columns: 1fr;
+    /* Все блоки в один столбец */
     gap: 20px;
   }
+
   .footer .social-links a {
     margin: 0 5px;
     height: 30px;
     width: 30px;
     line-height: 30px;
   }
+
 }
 
-.box-art > h2 {
+.box-art>h2 {
   font-size: 2rem;
 }
 
 /* Карточки */
 .card-art {
-  background-color: #303132; /* светлый фон карточки */
+  background-color: #303132;
+  /* светлый фон карточки */
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -1207,7 +1109,7 @@ strong {
 .card-art p {
   text-align: left;
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   color: #ffffff;
 }
 
@@ -1216,6 +1118,10 @@ strong {
   .fullscreen-container-login {
     min-height: 700px;
   }
+
+  .justphoto {
+  height: 300px;
+  }
 }
 
 /* Адаптация для смартфонов (ширина 480px и меньше) */
@@ -1223,8 +1129,10 @@ strong {
   * {
     box-sizing: border-box;
   }
+
   body {
-    font-size: 14px; /* Уменьшить общий размер текста */
+    font-size: 14px;
+    /* Уменьшить общий размер текста */
   }
 
   .header-container {
@@ -1250,11 +1158,13 @@ strong {
 
   .box {
     padding: 5vw;
-    font-size: 0.7rem; /* Уменьшить шрифт */
+    font-size: 0.7rem;
+    /* Уменьшить шрифт */
   }
 
   .card-container {
-    grid-template-columns: 1fr; /* Одна колонка */
+    grid-template-columns: 1fr;
+    /* Одна колонка */
   }
 
   .card {
@@ -1272,7 +1182,8 @@ strong {
   }
 
   .footer-row {
-    grid-template-columns: 1fr; /* Одна колонка */
+    grid-template-columns: 1fr;
+    /* Одна колонка */
   }
 
   .footer ul li a {
@@ -1296,12 +1207,12 @@ strong {
     font-size: 1.8rem;
   }
 
-  .fullscreen-container-4 > .box > h2 {
+  .fullscreen-container-4>.box>h2 {
     font-size: 1.8rem;
   }
-  
+
   /* Карточки */
-  
+
   .card-art h2 {
     font-size: 1rem;
   }
@@ -1311,16 +1222,19 @@ strong {
   }
 
 
-  .box-art > h2 {
+  .box-art>h2 {
     font-size: 1.8rem;
   }
-  
-  
+
+
   .card-art p {
     text-align: left;
     font-weight: 400;
     font-size: 0.7rem;
     color: #ffffff;
+  }
+  .justphoto {
+  height: 300px;
   }
 
 }
