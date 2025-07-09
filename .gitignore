@@ -9,3 +9,5 @@ __pycache__/
 flaskenv/
 
 passenger_wsgi.pyvenv/
+venv/
+.DS_Store
