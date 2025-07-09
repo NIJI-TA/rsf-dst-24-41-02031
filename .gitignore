@@ -11,3 +11,4 @@ flaskenv/
 passenger_wsgi.pyvenv/
 venv/
 .DS_Store
+passenger_wsgi.py
