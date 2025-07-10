@@ -5,8 +5,7 @@
     <link type="text/css" href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="The project is dedicated to research into magnetoelectric effects and the use of AI for control
+    <meta name="description" content="The project is dedicated to research into magnetoelectric effects and the use of AI for control
                             movement and protection of spacecraft. Carried out with the support of the Russian Science Foundation in collaboration with
                             St. Petersburg State University. 
                             The project is dedicated to fundamental scientific research, 
@@ -18,7 +17,8 @@
                             The main object of study is spacecraft and groupings of spacecraft, 
                             interacting with the geomagnetic field through Lorentzian forces and moments, 
                             as well as moments caused by magnetic interaction.">
-    <meta name="keywords" content="научный проект, технологии, исследования, инновации, математика, физика, космические аппараты, космос, Мат-Мех, Математико-Механический факультет, СПбГУ, РНФ, пространство, спейс, math-mech, math, mechanics, projects, space, spbu, SPbU">
+    <meta name="keywords"
+        content="научный проект, технологии, исследования, инновации, математика, физика, космические аппараты, космос, Мат-Мех, Математико-Механический факультет, СПбГУ, РНФ, пространство, спейс, math-mech, math, mechanics, projects, space, spbu, SPbU">
     <meta name="author" content="Тихонов Алексей Александрович, СПбГУ">
     <link rel="canonical" href="https://math-mech-space.ru/">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -44,9 +44,6 @@
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <!--div class="header-logo">
-                <img class="logo-image" src="{{ url_for('static', filename='images/logo_1.png') }}" alt="Логотип">
-            </div-->
             <nav class="header-nav" aria-label="Главное меню">
                 <ul class="nav-list">
                     {% block header_list %}
@@ -80,23 +77,20 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Footer >
-    <footer class="footer">
-        <a href="https://rscf.ru/project/24-41-02031/">Link to the project card on the website
-            RSF</a>
-    </footer-->
-
     <footer class="footer">
         <div class="footer-row">
             <div class="footer-col-1">
                 <h4>About us</h4>
                 <ul>
                     <li>
-                        <p>The project is dedicated to research into magnetoelectric effects and the use of AI for control
-                            movement and protection of spacecraft. Carried out with the support of the Russian Science Foundation in collaboration with
+                        <p>The project is dedicated to research into magnetoelectric effects and the use of AI for
+                            control
+                            movement and protection of spacecraft. Carried out with the support of the Russian Science
+                            Foundation in collaboration with
                             St. Petersburg State University.</p>
                     </li>
-                    <li><a href="https://rscf.ru/project/24-41-02031/"> &#10097 Link to the project card on the RSF website</a></li>
+                    <li><a href="https://rscf.ru/project/24-41-02031/"> &#10097 Link to the project card on the RSF
+                            website</a></li>
                 </ul>
             </div>
             <div class="footer-col-2">
@@ -113,10 +107,10 @@
             <div class="footer-col-3">
                 <h4>Contacts</h4>
                 <ul>
-                <a class="mail">&#9993 a.tikhonov@spbu.ru</a>
-                <a class="mail">&#9993 dkgiri@iitk.ac.in</a>
+                    <a class="mail">&#9993 a.tikhonov@spbu.ru</a>
+                    <a class="mail">&#9993 dkgiri@iitk.ac.in</a>
 
-            </ul>
+                </ul>
             </div>
         </div>
     </footer>

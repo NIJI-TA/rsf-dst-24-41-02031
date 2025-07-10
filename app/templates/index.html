@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
 
-
-
 {% block header_list %}
 {{ super() }}
 <li class="nav-item"><a href="#about">О проекте</a></li>
@@ -9,6 +7,7 @@
 {% endblock %}
 
 {% block content %}
+
 <!-- Hero Section -->
 <section id="main" class="hero">
     <div class="hero-content">
@@ -17,7 +16,6 @@
         </h2>
     </div>
 </section>
-
 
 <!-- Main Content -->
 <div id="about" class="fullscreen-container">
@@ -42,7 +40,8 @@
             </div>
             <div class="card" data-aos="fade-up" data-aos-duration="900">
                 <h4>Организация финансирования</h4>
-                <p>Department of Science and Technology of the Ministry of Science and Technology of the Republic of India (DST)</p>
+                <p>Department of Science and Technology of the Ministry of Science and Technology of the Republic of
+                    India (DST)</p>
                 <p>Грант № DST/INT/RUS/RSF/P-70/2023(G)</p>
             </div>
         </div>
@@ -98,7 +97,76 @@
     </div>
 </div>
 
+<!--1. Designing Orbit Estimation Tool in the presence of Lorentz force
+and traditional perturbation forces
+        Создание Инструмента Оценки Орбит с учетом Лоренцевых сил и традиционных возмущающих компонент внешних сил.
 
+  Perturbation forces have consistently been a challenge in the work
+of Flight Dynamics and Operation engineers while establishing up-link
+and down-link with the satellite. As a result of these perturbation
+forces, the satellite orbit undergoes a consistent decay over a period
+of time. Lorentz force, is one such perturbation which is mainly
+present in the LEO. As the satellite is electrically charged either
+due to photoelectric effect or present of charge on the spacecraft
+body, when it comes in contact with the magnetic field of the
+satellite, Lorentz force is generated. This would potentially add to
+the perturbation faced by the satellite. This research takes into
+account the mathematical modelling of the Lorentz force and develops a
+software tool using Batch least square estimator algorithm to
+accurately predict the upcoming orbital pass so that the ground
+station antenna can establish a strong up-link with the satellite
+
+2. Development and Testing of Coordinated Attitude Control Testbeds
+for Multi Cube-Satellite Operations
+
+    Разработка и тестирование Испитытельных стендов функционирования группировок Cubesat 
+    с Координированным Управлением Высотой.
+
+
+Coordinated attitude control in spacecraft ensures precise orientation
+alignment among multiple satellites, enabling efficient formation
+flying, high-resolution imaging, inter-satellite communication, and
+autonomous in-orbit operations like Rendezvous and Docking Operations,
+servicing and in orbit satellite surveillance. Ground based testing
+plays a crucial role in pre-mission phases. Hardware in the loop is
+one of the methods which is used to test the software and hardware
+architectures. This research carries out a comprehensive examination
+and development of two in house developed spacecraft attitude control
+simulator testbeds. Which includes numerical simulations of 3 Axis
+Reaction Wheel, Pyramidal Configuration Reaction Wheel Array, and a
+cluster of control moment gyroscopes. Furthermore, this explores
+different system architectures of each actuator configuration, control
+laws and potential upgrardes for the system architectures. ROS (Robot
+Operating System) has been utilized for various applications which
+includes real time attitude data logging and visualization, inter
+satellite communication and layer abstraction for co-ordinated control
+commands. The overall test facility will include a helmholtz cage to
+demonstrate magnetic fields of Low Earth Orbit to create a spacelike
+environment. The future of the setup holds various potential
+applications like synchronized flying, RPO, and CPO of satellites
+equipped with robotic manipulators.
+
+3. Resonant Orbital Dynamics of a Charged Spacecraft in Low Earth
+Orbit(LEO)
+
+    Резонансная орбитальная динамика заряженных КА на низких околоземных орбитах.
+
+This research investigates the resonance phenomena in the orbital
+dynamics of a charged spacecraft operating in Low Earth Orbit (LEO),
+accounting for key perturbative forces: atmospheric drag, Earth’s
+oblateness (J2), and Lorentz force due to interaction with Earth’s
+dipole magnetic field. The orbital equations of motion are decomposed
+into three degrees of freedom, allowing a detailed analysis of
+infinitesimal deviations from a nominal trajectory. By linearizing the
+system about the equilibrium path, we are investigating the resonance
+conditions. The inclusion of the Lorentz force introduces
+charge-to-mass ratio dependence, enabling active modulation of
+resonant behavior through spacecraft charging. This framework serves
+as a foundation for designing future charge-controlled orbital
+maneuvers and stability enhancement techniques, particularly in
+low-thrust or drag-modulated scenarios. The study presents both
+analytical and numerical insights into the emergence and suppression
+of resonant features in a multi-perturbative environment.-->
 
 <div class="fullscreen-container-4">
     <div class="box">
@@ -117,32 +185,18 @@
             </div>
             <div class="card" data-aos="fade-up" data-aos-duration="600">
                 <h4>2</h4>
-                <p>Будут разрабатываться новые подходы к реализации методов машинного обучения и реализации нейронных
+                <p>Разработаны новые подходы к реализации методов машинного обучения и реализации нейронных
                     сетей на борту КА для управления (в том числе, автономного) движением КА и группировками КА в
                     условиях систематических погрешностей и неизвестных ограниченных помех, вызванных динамическими
                     возмущениями и ошибками определения ориентации</p>
             </div>
             <div class="card" data-aos="fade-up" data-aos-duration="600">
                 <h4>3</h4>
-                <p>Будут разрабатываться новые способы активной защиты КА от ионизирующих излучений</p>
+                <p>Предложены новые способы активной защиты КА от ионизирующих излучений</p>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-<!-- Карточка для цитаты
-
-<div class="quote-block">
-    <span class="quote-mark">"</span>
-    <p class="quote-text">Наука — это не мудрость, застывшая в книгах, а энергия, движущая мир.</p>
-    <span class="quote-author">— Дмитрий Менделеев</span>
-</div-->
-
-
 
 <div id="contacts" class="fullscreen-container-5">
     <div class="box-4">
@@ -169,6 +223,5 @@
 
     </div>
 </div>
-
 
 {% endblock %}
