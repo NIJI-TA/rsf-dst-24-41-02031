@@ -2,4 +2,4 @@ from app import application
 
 
 if __name__ == "__main__":
-    application.run(debug=True)  # Включаем отладку вручную
+    application.run(host="0.0.0.0", port=30000, debug=True)  # Включаем отладку вручную
